@@ -13,7 +13,7 @@ function Checkout() {
       <div className="checkout__left">
         <img
           className="checkout__ad"
-          src="homeimage2.png"
+          src="homeimage3.png"
           alt=""
         />
 

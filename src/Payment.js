@@ -1,13 +1,14 @@
 import React, {useState,useEffect} from 'react';
 import './Payment.css';
-import { useStateValue } from './StateProvider';
+import { useStateValue } from "./StateProvider";
 import CheckoutProduct from "./CheckoutProduct";
 import {Link,useHistory} from "react-router-dom";
-import { CardElement,useElements, useStripe } from '@stripe/react-stripe-js';
+import { CardElement,useElements, useStripe } from "@stripe/react-stripe-js";
 import  CurrencyFormat  from "react-currency-format";
 import { getBasketTotal } from "./reducer";
-import axios from "./axios";
+import axios from  './axios';
 import { db } from "./firebase";
+import moment from "moment";
 function Payment() {
     const [{basket,user} , dispatch]=useStateValue();
     const history = useHistory();
@@ -18,14 +19,15 @@ function Payment() {
     const [error , setError]= useState(null);
     const [disabled,setDisabled] = useState(true);
     const [clientSecret, setClientSecret]=useState(true);
+    
     useEffect (() => {
         //genertate special strip sec
-        const getClientSecret =async ()=> {
+        const getClientSecret =async () => {
             const response = await axios({
                 method: 'post',
-                
-                url: '/payments/create?total=${getBasketTotal(basket)}'
+                url: `/payments/create?total=${getBasketTotal(basket)*5500}`
             });
+            console.log('iske baad clientsecret',response.data.clientSecret)
             setClientSecret(response.data.clientSecret)
         }
         getClientSecret();
@@ -36,32 +38,42 @@ function Payment() {
         //do fancy stripes
         event.preventDefault();
         setProcessing(true);
+        console.log('yaha aarha hai 2.0')
+        
 
         const payload = await stripe.confirmCardPayment(clientSecret,{
             payment_method:{
                 card: elements.getElement(CardElement)
                 
             }
-        }).then(({paymentIntent})=>{
-            //payment intent=payment
+        }).then(()=>{
+            //paymentintent=payment
             db.collection('users')
             .doc(user?.uid)
             .collection('orders')
-            .doc(paymentIntent.id)
+            .doc('pi_1IOzxzJteJyyBz8sbbz96JB5_secret_2FyMdadkzAH8W4DmJnhMWCrhg')
             .set({
                 basket : basket,
-                weight:paymentIntent.weight,
-                created:paymentIntent.created
+                amount:getBasketTotal(basket)*5500,
+                created:11
             })
+
 
             setSucceeded(true);
             setError(null)
             setProcessing(false)
+            //console.log('yaha tak aarha hai')
+            
             dispatch ({
                 type:'EMPTY_BASKET'
             })
             history.replace('/orders')
+                
+        }).catch((a)=>{
+            console.error("jayesh solve 1",a);
         })
+            
+        
     }
     
     
@@ -129,10 +141,10 @@ function Payment() {
                                 <h3> order total : {value} </h3>
                             )}
                             decimalScale={2}
-                            value={getBasketTotal(basket)}
+                            value={getBasketTotal(basket)*5500}
                             displayType={"text"}
                             ThousandSeparator={true}
-                            suffix={"gms"}
+                            prefix={"₹"}
                             />
                             <button disabled={processing || disabled || succeeded}>
                                 <span>{processing ? <p>processing</p> : "Buy Now"}</span>
