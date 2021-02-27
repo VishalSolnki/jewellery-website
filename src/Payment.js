@@ -46,16 +46,18 @@ function Payment() {
                 card: elements.getElement(CardElement)
                 
             }
-        }).then(()=>{
+        }).then((paymentIntent)=>{
             //paymentintent=payment
             db.collection('users')
             .doc(user?.uid)
             .collection('orders')
-            .doc('pi_1IOzxzJteJyyBz8sbbz96JB5_secret_2FyMdadkzAH8W4DmJnhMWCrhg')
+            //.doc('pi_1IOzxzJteJyyBz8sbbz96JB5_secret_2FyMdadkzAH8W4DmJnhMWCrhg')
+            .doc(paymentIntent.id)
             .set({
                 basket : basket,
                 amount:getBasketTotal(basket)*5500,
-                created:11
+                //amount:paymentIntent.amount,
+                created:11,
             })
 
 
@@ -64,9 +66,9 @@ function Payment() {
             setProcessing(false)
             //console.log('yaha tak aarha hai')
             
-            dispatch ({
-                type:'EMPTY_BASKET'
-            })
+            // dispatch ({
+            //     type:'EMPTY_BASKET'
+            // })
             history.replace('/orders')
                 
         }).catch((a)=>{

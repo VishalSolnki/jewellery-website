@@ -11,6 +11,7 @@ function Home() {
           src="homeimage.png"
           alt=""
         />
+       
 
         <div className="home__row">
           <Product
