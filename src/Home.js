@@ -18,6 +18,7 @@ function Home() {
             id="1"
             
             weight={11.96}
+            price={11.96*5500}
             rating={5}
             image="1.png"
             title="Platinum Wedding Ring with Diamond(950 Platinum,0.04ct)-Platinum Band For Him. "

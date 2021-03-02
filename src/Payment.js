@@ -6,9 +6,9 @@ import {Link,useHistory} from "react-router-dom";
 import { CardElement,useElements, useStripe } from "@stripe/react-stripe-js";
 import  CurrencyFormat  from "react-currency-format";
 import { getBasketTotal } from "./reducer";
+import Rate from "./Rate";
 import axios from  './axios';
 import { db } from "./firebase";
-import moment from "moment";
 function Payment() {
     const [{basket,user} , dispatch]=useStateValue();
     const history = useHistory();
@@ -26,6 +26,7 @@ function Payment() {
             const response = await axios({
                 method: 'post',
                 url: `/payments/create?total=${getBasketTotal(basket)*5500}`
+                //url: `/payments/create?total=${getBasketTotal(basket)*((items.open_price)/28.349)-.000961339025}`
             });
             console.log('iske baad clientsecret',response.data.clientSecret)
             setClientSecret(response.data.clientSecret)
@@ -55,7 +56,8 @@ function Payment() {
             .doc(paymentIntent.id)
             .set({
                 basket : basket,
-                amount:getBasketTotal(basket)*5500,
+              amount:getBasketTotal(basket)*5500,
+                //amount:getBasketTotal(basket)*((items.open_price)/28.349)-.000961339025,
                 //amount:paymentIntent.amount,
                 created:11,
             })
@@ -143,7 +145,8 @@ function Payment() {
                                 <h3> order total : {value} </h3>
                             )}
                             decimalScale={2}
-                            value={getBasketTotal(basket)*5500}
+                           value={getBasketTotal(basket)*5500}
+                            //value={getBasketTotal(basket)*data}
                             displayType={"text"}
                             ThousandSeparator={true}
                             prefix={"₹"}
