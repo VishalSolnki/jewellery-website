@@ -16,6 +16,9 @@ function Subtotal() {
                <p>
                     Subtotal({basket?.length}):<strong>{value}</strong>
                 </p>
+                <p>
+                    Total Price:<strong>{getBasketTotal(basket)*5500}</strong>
+                </p>
                 <small className="subtotal__gift">
                     <input type="checkbox"/> This order 
                     contains a gift

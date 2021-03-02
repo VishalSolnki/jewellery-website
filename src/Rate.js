@@ -40,6 +40,7 @@ import React,{Component} from 'react'
 import "./Rate.css";
 import CurrencyFormat from "react-currency-format";
 import Payment from './Payment';
+import { Link } from "react-router-dom";
 class Rate extends Component {
     constructor(props){
         super(props);
@@ -86,35 +87,56 @@ class Rate extends Component {
             return<div>Loading...</div>;
         }
         else{
+            //const price= ((items.open_price)/28.349)-.000961339025 ;
+            const price=5500
+            console.log(price)
             return(
+                
                 <div className="Rate">
+                    <table border="20px">
+                        <tr>
+                            <td>currency type</td>
+                            <td>open_price</td>
+                        </tr>
+                        <tr>
+                            <td> {items.currency}</td>
+                            <td>{price}</td>
+                        </tr>
+                        
+                    </table>
                     DATA IS LOADED SUCCESSFULLY
                     
+                
                     
                     
-                    <ul>
-                        
-                        <li>
-                            <div className="currency">
-                            { items.currency }
-                            </div>
-                            <div className="open_price">
                             
                             { ((items.open_price)/28.349)-.000961339025 }
                             </div>
-                            <Link to={{
-                                pathname:"/Payment",
-                                data:((items.open_price)/28.349)-.000961339025 
-                            }}>
-                            </Link>
-                            
-                        </li>
-                    </ul>
+                            {/* {this.props.history.push({
+                                pathname:'/Payment',
+                                data:items.open_price
+                            })} */}
+                            {/* <Payment
+                            //price={price}
+                            price={5500}
+                            /> */}
+                            {/* <Link 
+                            price={price}
+                            to={{
+                                pathname:'/Payment',
+                                data:{price}
+                            }}
+                            ></Link> */}
+                        
+                    
+                    
+                
                   
                    
-                </div>
                 
-            );
+                
+                
+        
         }
 
         

@@ -9,7 +9,9 @@ import { getBasketTotal } from "./reducer";
 import Rate from "./Rate";
 import axios from  './axios';
 import { db } from "./firebase";
-function Payment() {
+import { render } from '@testing-library/react';
+const Payment=(props)=> {
+    console.log(props.price,'shivam')
     const [{basket,user} , dispatch]=useStateValue();
     const history = useHistory();
     const stripe = useStripe();
@@ -19,6 +21,15 @@ function Payment() {
     const [error , setError]= useState(null);
     const [disabled,setDisabled] = useState(true);
     const [clientSecret, setClientSecret]=useState(true);
+    
+    const data=props=>{
+        const {data} = this.props.location
+        
+        return(
+            
+            <h1> {props.price} </h1>
+        )
+    }
     
     useEffect (() => {
         //genertate special strip sec
@@ -89,8 +100,9 @@ function Payment() {
 
     }
 
-
+    
     return (
+        
         <div className='payment'>
             <div className='payment__container'>
                 <h1>
@@ -145,8 +157,9 @@ function Payment() {
                                 <h3> order total : {value} </h3>
                             )}
                             decimalScale={2}
-                           value={getBasketTotal(basket)*5500}
-                            //value={getBasketTotal(basket)*data}
+                           //value={getBasketTotal(basket)*5500}
+                            
+                            value={getBasketTotal(basket)*data}
                             displayType={"text"}
                             ThousandSeparator={true}
                             prefix={"₹"}
