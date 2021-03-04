@@ -65,7 +65,7 @@ function App() {
         <Route path="/Rate">
         
         <Header/>
-        <Rate/>
+          <Rate/>
         </Route>
         <Route path="/payment">
             <Header />

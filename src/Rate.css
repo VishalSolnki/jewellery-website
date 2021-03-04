@@ -1,5 +1,18 @@
 .Rate {
-  margin: 10px;
-  border-width: 20px;
-  border-color: black;
+  background-color: black;
+}
+.table {
+  display: inline-block;
+  position: relative;
+  left: 25%;
+  font: 13px/1.7em "Open Sans";
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  top: 30%;
+  border-color: firebrick;
+  position: center;
+  color: aliceblue;
+  background-color: darkslategray;
+}
+.text {
+  color: aliceblue;
 }

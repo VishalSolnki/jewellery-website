@@ -40,11 +40,14 @@ import React,{Component} from 'react'
 import "./Rate.css";
 import CurrencyFormat from "react-currency-format";
 import Payment from './Payment';
-import { Link } from "react-router-dom";
+import {Link,useHistory} from "react-router-dom";
+
 class Rate extends Component {
+    
     constructor(props){
         super(props);
         this.state={
+            
             items:[],
             isLoaded:false,
 
@@ -79,56 +82,82 @@ class Rate extends Component {
                 })
             })
             .catch(err => console.log(err) )
+        fetch('https://www.goldapi.io/api/XAG/INR',requestOptions)
+            .then(res=> res.json())
+            .then(json=>{
+                console.log("Print the json",json);
+                this.setState({
+                    isLoaded:true,
+                    itemssilver:json,
+                })
+            })
+            .catch(err => console.log(err) )
     }
     render(){
+        
+        //const history = useHistory();
         var{isLoaded,items}=this.state;
+        var{isLoaded,itemssilver}=this.state;
+        
         //this.setState({isLoaded:true,items:json});
+        
         if(!isLoaded){
             return<div>Loading...</div>;
         }
         else{
-            //const price= ((items.open_price)/28.349)-.000961339025 ;
-            const price=5500
+            //const price= ((items.open_price)/28.349) ;
+            const price=(items.open_price);
+            const price1=(itemssilver.open_price);
+            const silverprice=(itemssilver.low_price);
+            
+            //const price=5500
             console.log(price)
+            console.log(price1)
+            console.log(silverprice)
             return(
                 
-                <div className="Rate">
-                    <table border="20px">
-                        <tr>
-                            <td>currency type</td>
+                <div className="Rate" >
+                    DATA IS LOADED SUCCESSFULLY
+                    <table className="table" border="5px" backgroundcolor="RED">
+                        <tr className="text">
+                            <td>metal type</td>
+                            <td >currency type</td>
                             <td>open_price</td>
+                            <td>low_Price</td>
+                            <td>High_Price</td>
                         </tr>
                         <tr>
+                            <td>Gold</td>
                             <td> {items.currency}</td>
                             <td>{price}</td>
+                            
+                            <td>{items.low_price}</td>
+                            <td>{items.high_price}</td>
+                            
                         </tr>
+                        <tr>
+                            <td>Silver</td>
+                            <td>{itemssilver.currency}</td>
+                            <td>{price1}</td>
+                            <td>{itemssilver.low_price}</td>
+                            <td>{itemssilver.high_price}</td>
+                            
+                        </tr>
+                        {itemssilver.high_price}
+                        
                         
                     </table>
-                    DATA IS LOADED SUCCESSFULLY
+                    {/* <Payment price={5500}/> */}
+                    
                     
                 
                     
                     
                             
-                            { ((items.open_price)/28.349)-.000961339025 }
-                            </div>
-                            {/* {this.props.history.push({
-                                pathname:'/Payment',
-                                data:items.open_price
-                            })} */}
-                            {/* <Payment
-                            //price={price}
-                            price={5500}
-                            /> */}
-                            {/* <Link 
-                            price={price}
-                            to={{
-                                pathname:'/Payment',
-                                data:{price}
-                            }}
-                            ></Link> */}
+                           
+                    </div>
                         
-                    
+            )   ;
                     
                 
                   
@@ -142,5 +171,6 @@ class Rate extends Component {
         
         
 }
+
 }
 export default Rate

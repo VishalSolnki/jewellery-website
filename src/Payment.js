@@ -11,7 +11,7 @@ import axios from  './axios';
 import { db } from "./firebase";
 import { render } from '@testing-library/react';
 const Payment=(props)=> {
-    console.log(props.price,'shivam')
+    //console.log(price)
     const [{basket,user} , dispatch]=useStateValue();
     const history = useHistory();
     const stripe = useStripe();
@@ -22,14 +22,7 @@ const Payment=(props)=> {
     const [disabled,setDisabled] = useState(true);
     const [clientSecret, setClientSecret]=useState(true);
     
-    const data=props=>{
-        const {data} = this.props.location
-        
-        return(
-            
-            <h1> {props.price} </h1>
-        )
-    }
+    
     
     useEffect (() => {
         //genertate special strip sec
@@ -103,6 +96,7 @@ const Payment=(props)=> {
     
     return (
         
+        
         <div className='payment'>
             <div className='payment__container'>
                 <h1>
@@ -138,9 +132,15 @@ const Payment=(props)=> {
                                 image={item.image}
                                 weight={item.weight}
                                 rating={item.rating}
+                                
                                 />
+                                
                         ))}
                     </div>
+                     <form>
+                    <p><label><strong>Customize your Order Here</strong></label></p>
+                    <textarea id="myTextArea" rows="3" cols="20"></textarea>
+                </form>
 
                 </div>
                 {/* psyment method*/}
@@ -157,9 +157,9 @@ const Payment=(props)=> {
                                 <h3> order total : {value} </h3>
                             )}
                             decimalScale={2}
-                           //value={getBasketTotal(basket)*5500}
+                           value={getBasketTotal(basket)*5500}
                             
-                            value={getBasketTotal(basket)*data}
+                            //value={getBasketTotal(basket)*data}
                             displayType={"text"}
                             ThousandSeparator={true}
                             prefix={"₹"}

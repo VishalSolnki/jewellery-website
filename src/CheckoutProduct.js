@@ -36,6 +36,7 @@ function CheckoutProduct({ id, image, title, weight, rating, hideButton,price })
                         <p>🌟</p>
                     ))}
                 </div>
+               
                 {!hideButton && (
                     <button onClick={removeFromBasket}>Remove from Basket</button>
                 )}
