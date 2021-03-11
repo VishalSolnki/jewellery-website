@@ -43,8 +43,14 @@ function Product({ id, title, image, weight, rating,price }) {
 
       <button onClick={addToBasket}>Add to Basket</button>
       <div className="product_price">
-        <small>₹</small>
+        <p>
+          <strong><small>₹</small></strong>
+          <strong><strike>{weight*5600}</strike></strong>
+          </p>
+        <p>
+        <strong><small>₹</small></strong>
         <strong>{weight*5500}</strong>
+        </p>
       </div>
     </div>
   );

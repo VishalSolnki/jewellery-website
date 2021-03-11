@@ -1,17 +1,22 @@
 .Rate {
   background-color: black;
+  width: 100%;
+  height: 100%;
 }
 .table {
   display: inline-block;
   position: relative;
   left: 25%;
   font: 13px/1.7em "Open Sans";
+  font-size: 25px;
+  height: 30%;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   top: 30%;
-  border-color: firebrick;
+  border-color: orangered;
   position: center;
   color: aliceblue;
   background-color: darkslategray;
+  /* //background: black; */
 }
 .text {
   color: aliceblue;

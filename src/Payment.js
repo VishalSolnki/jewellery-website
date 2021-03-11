@@ -21,7 +21,7 @@ const Payment=(props)=> {
     const [error , setError]= useState(null);
     const [disabled,setDisabled] = useState(true);
     const [clientSecret, setClientSecret]=useState(true);
-    
+    const [textareaValue,settextareaValue]=useState("");
     
     
     useEffect (() => {
@@ -44,6 +44,12 @@ const Payment=(props)=> {
         event.preventDefault();
         setProcessing(true);
         console.log('yaha aarha hai 2.0')
+        // this.settextareaValue({
+        //     textareaValue:event.target.myTextArea,
+            
+        // })
+        // console.log(textareaValue)
+        
         
 
         const payload = await stripe.confirmCardPayment(clientSecret,{
@@ -64,6 +70,7 @@ const Payment=(props)=> {
                 //amount:getBasketTotal(basket)*((items.open_price)/28.349)-.000961339025,
                 //amount:paymentIntent.amount,
                 created:11,
+                descrption:5,
             })
 
 
@@ -139,7 +146,7 @@ const Payment=(props)=> {
                     </div>
                      <form>
                     <p><label><strong>Customize your Order Here</strong></label></p>
-                    <textarea id="myTextArea" rows="3" cols="20"></textarea>
+                    <textarea id="myTextArea" rows="3" cols="20"  placeholder="Description..." onSubmit={handleSubmit}></textarea>
                 </form>
 
                 </div>

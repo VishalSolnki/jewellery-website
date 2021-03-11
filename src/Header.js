@@ -38,12 +38,18 @@ function Header() {
             <span className="header__optionLineTwo">{user ? 'Sign Out' : 'Sign In'}</span>
           </div>
         </Link>
-        <Link to='/Rate'>
+        {/* <Link to='http://www.spngold.in/'>
         <div className="header__option">
             <span className="header__optionLineOne">GOLD</span>
             <span className="header__optionLineTwo">RATE</span>
         </div>
-        </Link>
+        </Link> */}
+        <a href="http://www.spngold.in/">
+          <div className="header__option">
+            <span className="header__optionLineOne">GOLD</span>
+            <span className="header__optionLineTwo">RATE</span>
+        </div>
+        </a>
         
         <Link to='/orders'>
           <div className="header__option">

@@ -1,41 +1,3 @@
-//  import React,{useState,useEffect} from 'react'
-//  import { axios } from "axios";
-//  import Header from './Header';
-//  function Rate() {
-     
-//             var myHeaders = new Headers();
-//             myHeaders.append("x-access-token", "goldapi-19d1rruklnmt1vx-io");
-//             myHeaders.append("Content-Type", "application/json");
-
-//             var requestOptions = {
-//             method: 'GET',
-//             headers: myHeaders,
-//             redirect: 'follow'
-//             };
-
-//             fetch("https://www.goldapi.io/api/XAU/INR", requestOptions)
-//             .then(response => response.text())
-//             .then(result =>{
-//                 console.log(result)
-//                 let objRes = JSON.parse(result); 
-//                 console.log(objRes.currency);
-//                 console.log(objRes.open_price);
-//                 // <div className="rate">
-//                 // gold rate is :{result};
-//                 // </div>
-//                 document.write(objRes.currency)
-//                //window.alert(result.getAttribute("currency"))
-//                return;
-//             })
-//             .catch(error => console.log('error', error));
-//         return(
-//             document.write("nhi hua")
-//         )
-//  }
- 
-//  export default Rate
-
-
 import React,{Component} from 'react'
 import "./Rate.css";
 import CurrencyFormat from "react-currency-format";
@@ -92,12 +54,14 @@ class Rate extends Component {
                 })
             })
             .catch(err => console.log(err) )
+        // 
     }
     render(){
         
         //const history = useHistory();
         var{isLoaded,items}=this.state;
         var{isLoaded,itemssilver}=this.state;
+        
         
         //this.setState({isLoaded:true,items:json});
         
@@ -116,17 +80,17 @@ class Rate extends Component {
             console.log(silverprice)
             return(
                 
-                <div className="Rate" >
-                    DATA IS LOADED SUCCESSFULLY
-                    <table className="table" border="5px" backgroundcolor="RED">
-                        <tr className="text">
+                <div className="Rate" width="100%" >
+                    // DATA IS LOADED SUCCESSFULLY
+                    <table className="table" border="5px" backgroundcolor="RED" >
+                        <tr className="text" >
                             <td>metal type</td>
                             <td >currency type</td>
                             <td>open_price</td>
                             <td>low_Price</td>
                             <td>High_Price</td>
                         </tr>
-                        <tr>
+                        <tr >
                             <td>Gold</td>
                             <td> {items.currency}</td>
                             <td>{price}</td>
@@ -135,7 +99,7 @@ class Rate extends Component {
                             <td>{items.high_price}</td>
                             
                         </tr>
-                        <tr>
+                        <tr >
                             <td>Silver</td>
                             <td>{itemssilver.currency}</td>
                             <td>{price1}</td>
@@ -143,11 +107,12 @@ class Rate extends Component {
                             <td>{itemssilver.high_price}</td>
                             
                         </tr>
+                        
                         {itemssilver.high_price}
                         
                         
                     </table>
-                    {/* <Payment price={5500}/> */}
+                    // {/* <Payment price={5500}/> */}
                     
                     
                 

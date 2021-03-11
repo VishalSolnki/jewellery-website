@@ -51,7 +51,7 @@ function Home() {
             <div className="col-lg-4 col-md-6">
               <div className="single_banner">
                 <div className="banner_thumb">
-                  <a href="../Admin"><img src="bg-1.jpg" alt="lets try"/></a>
+                  <a href="../Admin"><img src="necklace1resized.jpg" alt="lets try"/></a>
                   <div className="banner_content">
                     <p>new design</p>
                     <h2>Small design Rings</h2>
@@ -96,11 +96,11 @@ function Home() {
             <div className="col-lg-4 col-md-6">
               <div className="single_banner">
                 <div className="banner_thumb">
-                  <a href="../Sale#necklacesection"><img src="necklace1resized.jpg" alt="lets try"/></a>
+                  <a href="../Sale#necklacesection"><img src="bg-3.jpg" alt="lets try"/></a>
                   <div className="banner_content">
-                    <p>Featured Necklace</p>
-                    <h2>KUNDAN SETS</h2>
-                    <span>Sale 25%</span>
+                    <p>Featured Rings</p>
+                    <h2>Platinum Rings</h2>
+                    <span>Sale 30%</span>
                   </div>
                 </div>
               </div>

@@ -1,0 +1,14 @@
+.sale {
+  background-color: #2d2d2d;
+  width: 100%;
+  height: max-content;
+}
+.heading {
+  text-align: center;
+  color: goldenrod;
+  font-size: 70px;
+  border-right: 20px;
+}
+.table1 {
+  width: 97%;
+}
