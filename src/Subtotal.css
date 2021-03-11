@@ -15,6 +15,7 @@
 .subtotal__gift {
   display: flex;
   align-items: center;
+  color: white;
 }
 
 .subtotal__gift > input {

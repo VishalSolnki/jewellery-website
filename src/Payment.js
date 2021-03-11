@@ -70,7 +70,7 @@ const Payment=(props)=> {
                 //amount:getBasketTotal(basket)*((items.open_price)/28.349)-.000961339025,
                 //amount:paymentIntent.amount,
                 created:11,
-                descrption:5,
+                descrption:textareaValue,
             })
 
 
@@ -107,7 +107,7 @@ const Payment=(props)=> {
         <div className='payment'>
             <div className='payment__container'>
                 <h1>
-                    Checkout (<Link to ="/checkout">{basket?.length} items
+                    Checkout (<Link to ="/checkout" style={{color:'goldenrod'}}>{basket?.length} items
                     </Link>)
 
                 </h1>
@@ -146,8 +146,8 @@ const Payment=(props)=> {
                     </div>
                      <form>
                     <p><label><strong>Customize your Order Here</strong></label></p>
-                    <textarea id="myTextArea" rows="3" cols="20"  placeholder="Description..." onSubmit={handleSubmit}></textarea>
-                </form>
+                    <textarea id="myTextArea" rows="3" cols="20"  placeholder="Description..." onChange={(event)=>settextareaValue(event.target.value)}></textarea>
+                    </form>
 
                 </div>
                 {/* psyment method*/}

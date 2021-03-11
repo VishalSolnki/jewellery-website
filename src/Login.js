@@ -32,19 +32,8 @@ function Login() {
             })
             .catch(error => alert(error.message))
     }
-        const registerasadmin = e => {
-        e.preventDefault();
-
-        auth
-            .createUserWithEmailAndPassword(email, password)
-            .then((auth) => {
-                // it successfully created a new user with email and password
-                if (auth) {
-                    history.push('../Admin')
-                }
-            })
-            .catch(error => alert(error.message))
-    }
+        
+    
 
     return (
         <div className='login'>
@@ -74,7 +63,7 @@ function Login() {
                 </p>
 
                 <button onClick={register} className='login__registerButton'>Create your Amazon Account</button>
-                <button onClick={registerasadmin} className='adminlogin__registerButton'>login as admin</button>
+                
             </div>
         </div>
     )
