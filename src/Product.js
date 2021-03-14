@@ -16,7 +16,7 @@ function Product({ id, title, image, weight, rating,price }) {
           image:image,
           weight:weight,
           rating:rating,
-          price:weight*5500,
+          price:weight*5000,
         },
 
       });
@@ -45,11 +45,11 @@ function Product({ id, title, image, weight, rating,price }) {
       <div className="product_price">
         <p>
           <strong><small>₹</small></strong>
-          <strong><strike>{weight*5600}</strike></strong>
+          <strong><strike>{weight*5100}</strike></strong>
           </p>
         <p>
         <strong><small>₹</small></strong>
-        <strong>{weight*5500}</strong>
+        <strong>{weight*5000}</strong>
         </p>
       </div>
     </div>

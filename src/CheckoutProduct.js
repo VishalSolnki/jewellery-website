@@ -27,7 +27,7 @@ function CheckoutProduct({ id, image, title, weight, rating, hideButton,price })
                         </p>
                     <p>
                         <small>₹</small>
-                        <strong>{weight*5500}</strong>
+                        <strong>{weight*5000}</strong>
                     </p>
                 <div className="checkoutProduct__rating">
                     {Array(rating)

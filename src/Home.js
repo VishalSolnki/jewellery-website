@@ -15,7 +15,7 @@ function Home() {
                 <div className="col-lg-6 col-md-6">
                   <div className="social_icone">
                     <ul>
-                      <li><a href="#"><i  className="ion-social-facebook"></i></a></li>
+                      <li><a href="https://www.facebook.com/"><i  className="ion-social-facebook"></i></a></li>
                       <li><a href="#"><i  className="ion-social-twitter"></i></a></li>
                       <li><a href="#"><i  className="ion-social-instagram"></i></a></li>
                       <li><a href="#"><i  className="ion-social-linkedin"></i></a></li>
@@ -51,10 +51,11 @@ function Home() {
             <div className="col-lg-4 col-md-6">
               <div className="single_banner">
                 <div className="banner_thumb">
+                  {/* <a href="../Sale#earingsection"><img src="bg-1.jpg" alt="lets try"/></a> */}
                   <a href="../Admin"><img src="bg-1.jpg" alt="lets try"/></a>
                   <div className="banner_content">
                     <p>new design</p>
-                    <h2>Small design Rings</h2>
+                    <h2>Small desig studs</h2>
                     <span>Sale 20%</span>
                   </div>
                 </div>
@@ -170,7 +171,7 @@ function Home() {
           <Product
             id="1"
             
-            weight={11.96}
+            weight={12}
            // price={11.96*5500}
             rating={5}
             image="1.png"
@@ -285,7 +286,7 @@ function Home() {
                             {/* <img src="insta-1.jpg"/> */}
                             <div class="instagram__text">
                                 <i class="ion-social-instagram"></i>
-                                <a href="#">@ S.J</a>
+                                <a href="https://www.instagram.com/accounts/login/">@ S.J</a>
                             </div>
                         </div>
                     </div>
@@ -294,7 +295,7 @@ function Home() {
                             <img src="insta-1.jpg"/>
                             <div class="instagram__text">
                                 <i class="ion-social-instagram"></i>
-                                <a href="#">@ S.J</a>
+                                <a href="https://www.instagram.com/accounts/login/">@ S.J</a>
                             </div>
                         </div>
                     </div>
@@ -303,7 +304,7 @@ function Home() {
                           <img src="instagram/insta-2.jpg"/>
                             <div class="instagram__text">
                                 <i class="ion-social-instagram"></i>
-                                <a href="#">@ S.J</a>
+                                <a href="https://www.instagram.com/accounts/login/">@ S.J</a>
                             </div>
                         </div>
                     </div>
@@ -312,7 +313,7 @@ function Home() {
                           <img src="instagram/insta-3.jpg"/>
                             <div class="instagram__text">
                                 <i class="ion-social-instagram"></i>
-                                <a href="#">@ S.J</a>
+                                <a href="https://www.instagram.com/accounts/login/">@ S.J</a>
                             </div>
                         </div>
                     </div>
@@ -321,7 +322,7 @@ function Home() {
                           <img src="instagram/insta-4.jpg"/>
                             <div class="instagram__text">
                                 <i class="ion-social-instagram"></i>
-                                <a href="#">@ S.J</a>
+                                <a href="https://www.instagram.com/accounts/login/">@ S.J</a>
                             </div>
                         </div>
                     </div>
@@ -334,18 +335,18 @@ function Home() {
           <table>
             <div className="blog" cellspacing="25px">
             <tr >
-              
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               <td cellspacing="25px">
-                <img src="blog/1.jpg"></img>
+                <img src="blog/1.png"></img>
               </td>
               <td>
-                <img src="blog/2.jpg"></img>
+                <img src="blog/2.png"></img>
               </td>
               <td>
-                <img src="blog/3.jpg"></img>
+                <img src="blog/3.png"></img>
               </td>
               <td>
-                <img src="blog/4.jpg"></img>
+                <img src="blog/4.png"></img>
               </td>
               
             </tr>
@@ -358,8 +359,10 @@ function Home() {
                     <div class="col-lg-6 col-md-12">
                         <div class="port-box">
                             <div class="text-overlay">
+                              <a href="../Sale#pendantsection">
                                 <h1>New Arrivals 2020</h1>
                                 <p>Crown for wife</p>
+                                </a>
                             </div>
                             <img src="banner/1.jpg" alt=""/>
                         </div>
@@ -367,10 +370,12 @@ function Home() {
                     <div class="col-lg-6 col-md-12">
                         <div class="port-box">
                             <div class="text-overlay">
+                                <a href="../Sale#pendantsection">
                                 <h1>Featured Products 2020</h1>
                                 <p>Pendant for Valentine</p>
+                                </a>
                             </div>
-                            <img src="banner/2.jpg" alt=""/>
+                            <a href="../Sale#pendantsection"><img src="banner/2.jpg" alt=""/></a>
                         </div>
                     </div>
                 </div>
@@ -384,15 +389,15 @@ function Home() {
                             <div class="widgets_container contact_us">
                                 <h3>About S.J</h3>
                                 <div class="footer_contact">
-                                    <p>Address : S.J palace, Surat, Gujarat</p>
+                                    <p>Address : S.J palace, ANDHERI, MUMBAI</p>
                                     <p>Phone : <a href="tel:(+91)888888885555">(+91)888888885555</a></p>
                                     <p>Email : S.Jjewlers@gmail.com</p>
                                     <ul>
-                                        <li><a href="#"><i class="ion-social-facebook"></i></a></li>
-                                        <li><a href="#"><i class="ion-social-twitter"></i></a></li>
+                                        <li><a href="https://www.facebook.com/"><i class="ion-social-facebook"></i></a></li>
+                                        <li><a href="https://twitter.com/explore"><i class="ion-social-twitter"></i></a></li>
                                         <li><a href="#"><i class="ion-social-rss"></i></a></li>
-                                        <li><a href="#"><i class="ion-social-googleplus"></i></a></li>
-                                        <li><a href="#"><i class="ion-social-youtube"></i></a></li>
+                                        <li><a href="WWW.GOOGLE.COM"><i class="ion-social-googleplus"></i></a></li>
+                                        <li><a href="https://www.youtube.com/"><i class="ion-social-youtube"></i></a></li>
                                     </ul>
                                 </div>
                             </div>
